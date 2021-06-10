@@ -12,9 +12,9 @@ export default function Character(props) {
     </figure>
   </div>
   <div className="card-content ">
-  <div className="character-content ">
+  <div className="character-content card-size">
         <p className="title is-4 ">{name}</p>
-        <p className="subtitle is-6 ">Status: {status}</p>
+        <p className="subtitle is-6 m-05">Status: {status}</p>
         <p className="subtitle is-6">gender: {gender}</p>
         <p className="subtitle is-6">species: {species}</p>
         <p className="subtitle is-6">location: <a href={location.url}>{location.name}</a> </p>

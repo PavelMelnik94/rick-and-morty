@@ -12,8 +12,35 @@ body {
 .general {
   min-height: calc(100vh - 192px - 52px);
   position: relative;
-  
+
  
+}
+
+.pagination {
+  position: inherit;
+  width: 100%;
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  
+}
+
+.next {
+  margin-left: 3rem;
+  
+}
+
+.prev {
+  margin-right: 3rem;
+  
+}
+
+.pgb {
+  max-width: 300px;
+  margin-bottom: 0;
 }
 
 .p-1 {
@@ -46,4 +73,12 @@ body {
 
 .character-content {
   flex-grow: 1 !important; 
+}
+
+.navbar-item img {
+  min-height: 100%;
+}
+
+.card-size {
+  min-height: 280px;
 }
