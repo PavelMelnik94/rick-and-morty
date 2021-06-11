@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import {useState, useEffect} from 'react';
+import s from './Panel.module.css';
 
 export default function Panel() {
+
+
+
+
     return (
             <div className='container-fluid general p-2'>
       
@@ -20,9 +26,10 @@ export default function Panel() {
 </div>
 <p className="panel-tabs">
 
-<Link to='/characters' className="is-active">Персонажи</Link>
-<Link to='/locations'>Локации</Link>
-<Link to='/episodes'>Серии</Link>
+{/* <NavLink id='1' to='/'    >Блог</NavLink> */}
+<NavLink id='2' to='/characters' activeClassName={s.active} >Персонажи</NavLink>
+<NavLink id='3' to='/locations'  activeClassName={s.active} >Локации</NavLink>
+<NavLink id='4' to='/episodes'  activeClassName={s.active} >Серии</NavLink>
 
 </p>
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 
  function Header() {
 
@@ -7,7 +8,7 @@ import React from 'react'
             <nav className="level mt-3">
   
   <div className="level-item has-text-centered">
-    <h1 className='is-size-1'>Rick and Morty</h1>
+    <NavLink to='/' ><h1 className='is-size-1'>Rick and Morty</h1></NavLink>
   </div>
   
 </nav>

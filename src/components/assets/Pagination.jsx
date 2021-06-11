@@ -1,28 +1,33 @@
 import React, {useEffect, useState} from "react";
 
-function Pagination({currentPage, nextPage, prevPage, maxPage}) {
+function Pagination({currentPage = Number, nextPage = Function.prototype, prevPage = Function.prototype, maxPage = Number}) {
+  
+  
   
 
   const [disabledPrev, setDisabledPrev] = useState(true);
   const [disabledNext, setDisabledNext] = useState(false);
+
   
 
   useEffect(() => {
+
+
+    
     if (currentPage > 1) {
       setDisabledPrev(false)
   }
-  if (currentPage <= 1 || currentPage > {maxPage}) {
+  if (currentPage <= 1 ) {
       setDisabledPrev(true)
   } 
   
-  if (currentPage >= {maxPage}) {
+  if (currentPage >= maxPage) { 
       setDisabledNext(true)
   }
   
-  if (currentPage < {maxPage}) {
+  if (currentPage < maxPage) {
       setDisabledNext(false)
     }
-    console.log(currentPage);
   }, [maxPage, currentPage])
 
 

@@ -4,7 +4,7 @@ import { Home } from "./pages/Home";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import NotFound from "./pages/NotFound";
-import Characters from "./pages/Characters";
+import {Characters} from "./pages/Characters";
 import Locations from "./pages/Locations";
 import Episodes from "./pages/Episodes";
 
@@ -26,9 +26,9 @@ function App() {
         <Route path="/episodes" component={Episodes} />
         <Route  component={NotFound} />
 
-        <Footer />
 
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

@@ -58,20 +58,22 @@ body {
 
 }
 
-.character-list {
+.list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
 }
 
-.character {
-    display: flex !important;
-    flex-direction: column !important;
+.list-item {
+    /* display: flex !important;
+    flex-direction: column !important; */
 
 }
 
-.character-content {
-  flex-grow: 1 !important; 
+.list-item--content {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
 }
 
 .navbar-item img {

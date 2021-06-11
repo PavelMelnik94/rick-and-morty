@@ -31,8 +31,8 @@ const paginationAllCharacter = async () => {
 
 // locations data
 
-const getAllLocations = async () => {
-    const response = await fetch(`${API_URL}/location/`);
+const getAllLocations = async (page) => {
+    const response = await fetch(`${API_URL}/location/?page=${String(page)}`);
     return await response.json();  
 }
 

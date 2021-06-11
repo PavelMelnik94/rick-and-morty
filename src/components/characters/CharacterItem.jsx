@@ -5,14 +5,14 @@ export default function CharacterItem(props) {
     const {name, image, status, species, location, gender, episode, url} = props;
     return (
         <div className=' '>
-            <div className="card character">
+            <div className="card list-item">
   <div className="card-image">
     <figure className="image is-4by3">
       <img src={image} alt="Placeholderimage"/>
     </figure>
   </div>
   <div className="card-content ">
-  <div className="character-content card-size">
+  <div className="list-item--content card-size">
         <p className="title is-4 ">{name}</p>
         <p className="subtitle is-6 m-05">Status: {status}</p>
         <p className="subtitle is-6">gender: {gender}</p>

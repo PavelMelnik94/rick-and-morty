@@ -3,10 +3,10 @@ import {useEffect, useState} from 'react';
 
 import {Preloader} from '../components/assets/Preloader';
 
-import CharacterList from '../components/characters/CharacterList';
+
 import {getAllCharacters} from '../api';
 import { Pagination } from '../components/assets/Pagination.jsx'
-
+import Blog from './Blog'
 
 
 import Panel from '../components/Panel';
@@ -31,9 +31,7 @@ useEffect(() => {
   .then((data) => {
 setCharacter(data.results)
 setMaxPage(data.info.pages)
-    console.log(maxPage);
-    console.log(currentPage);
-  })
+  }).catch(error => console.log('error: ' + error))
 
   
 }, [currentPage, maxPage ])
@@ -56,24 +54,14 @@ const prevPage = () => {
     return (<>
           <Panel />
 
-          <Pagination 
-          currentPage={currentPage}
-          nextPage={nextPage}
-          prevPage={prevPage}
-          maxPage={maxPage}
           
-           />
                
           
           
-           {character ? <CharacterList  character={character}/>   : <Preloader />}
+           {character ? <Blog  />   : <Preloader />}
+           
             
-            <Pagination
-          currentPage={currentPage}
-          nextPage={nextPage}
-          prevPage={prevPage}
-          maxPage={maxPage}
-           />
+           
            </>
     )
 }
