@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Character(props) {
+export default function CharacterItem(props) {
 
     const {name, image, status, species, location, gender, episode, url} = props;
     return (

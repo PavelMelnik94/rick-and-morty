@@ -10,7 +10,6 @@ body {
 
 
 .general {
-  min-height: calc(100vh - 192px - 52px);
   position: relative;
 
  
