@@ -6,6 +6,7 @@ import {Preloader} from '../components/assets/Preloader';
 import CharacterList from '../components/characters/CharacterList';
 import {getAllCharacters} from '../api';
 import { Pagination } from '../components/assets/Pagination.jsx'
+import { useParams } from "react-router-dom";
 
 
 
@@ -14,6 +15,9 @@ import Panel from '../components/Panel';
 
 function Characters() {
 
+  const id = useParams();
+  console.log(id);
+  console.log(useParams);
 
 const [character, setCharacter] = useState([]);
 

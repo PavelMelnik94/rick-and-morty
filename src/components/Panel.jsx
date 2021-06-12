@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import {useState, useEffect} from 'react';
 import s from './Panel.module.css';
 
 export default function Panel() {
@@ -14,7 +13,7 @@ export default function Panel() {
       
       <nav className="panel panel-sz">
 <p className="panel-heading">
-Быстрый поиск по вселенной
+Сортировка по категориям
 </p>
 <div className="panel-block">
 <p className="control has-icons-left">

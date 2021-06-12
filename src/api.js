@@ -46,8 +46,8 @@ const filterLocationByName = async (locationName) => {
 
 // episodes data
 
-const getAllEpisodes = async () => {
-    const response = await fetch(`${API_URL}/episode/`);
+const getAllEpisodes = async (page) => {
+    const response = await fetch(`${API_URL}/episode/?page=${String(page)}`);
     return await response.json();  
 }
 

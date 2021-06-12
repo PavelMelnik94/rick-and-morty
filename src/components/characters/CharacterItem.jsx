@@ -1,8 +1,9 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 export default function CharacterItem(props) {
 
-    const {name, image, status, species, location, gender, episode, url} = props;
+    const {name, image, status, species, location, gender, episode, url, id} = props;
     return (
         <div className=' '>
             <div className="card list-item">
@@ -11,14 +12,10 @@ export default function CharacterItem(props) {
       <img src={image} alt="Placeholderimage"/>
     </figure>
   </div>
-  <div className="card-content ">
-  <div className="list-item--content card-size">
+  <div className="card-content box">
+  <div className="list-item--content card-size-char">
         <p className="title is-4 ">{name}</p>
-        <p className="subtitle is-6 m-05">Status: {status}</p>
-        <p className="subtitle is-6">gender: {gender}</p>
-        <p className="subtitle is-6">species: {species}</p>
-        <p className="subtitle is-6">location: <a href={location.url}>{location.name}</a> </p>
-        <a href={url} className="button in-info">подробнее</a>
+        <Link to={`/character/${id}`} className="button in-info">подробнее</Link>
         
       </div>
       

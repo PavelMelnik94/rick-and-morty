@@ -6,10 +6,13 @@ import {getAllLocations} from '../api';
 import Panel from '../components/Panel';
 import {LocationList} from '../components/locations/LocationList'
 
+
 export default function Locations() {
     const [locations, setLocations] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [maxPage, setMaxPage] = useState('');
+
+   
 
 useEffect(() => {
     getAllLocations(currentPage)

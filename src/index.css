@@ -38,7 +38,7 @@ body {
 }
 
 .pgb {
-  max-width: 300px;
+  max-width: 200px;
   margin-bottom: 0;
 }
 
@@ -64,11 +64,7 @@ body {
   gap: 1rem;
 }
 
-.list-item {
-    /* display: flex !important;
-    flex-direction: column !important; */
 
-}
 
 .list-item--content {
   display: flex !important;
@@ -82,4 +78,26 @@ body {
 
 .card-size {
   min-height: 280px;
+}
+
+.card-size-char {
+  min-height: 120px;
+}
+
+.simple-char {
+position: inherit;
+margin: 2rem;
+display:flex;
+min-width: calc(100% - 4rem);
+justify-content: center;
+}
+
+.char-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.char-info {
+ color: red !important;
 }
