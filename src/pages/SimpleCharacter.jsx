@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { filterCharacterById } from "../api";
+import { getAllEpisodes } from "../api";
 import { Preloader } from "../components/assets/Preloader";
 import {Link} from 'react-router-dom'
 
@@ -9,15 +10,21 @@ function SimpleCharacter(props) {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
 
-console.log(character);
+
+
+
 
   useEffect(() => {
+    
     filterCharacterById(id).then((data) => setCharacter(data));
     console.log(character);
-    return () => {
-      console.log("unmount");
-    };
-  }, [id, character]);
+    // const currentId = character.episode.map(url => url.slice(40));
+    // getAllEpisodes(currentId).then((data) => setEpisodeName(data.name));
+
+  }, [id, character.episode, character]);
+
+ 
+  
 
   return (
     <>
@@ -54,7 +61,7 @@ console.log(character);
                 <div className='char-episode-list' >
                 <p className='title is-5 is-bold' style={{margin: '1rem 0 0'}}>список эпизодов</p>
                     <ul>
-                    {character.episode ? character.episode.map(el => <li> <Link to={el.slice(31)}> {el}</Link> </li>) : 'загружаю...'}
+                    {character.episode ? character.episode.map(el => <span> <Link to={el.slice(31)}>  {el.slice(40)}</Link> </span>) : 'загружаю...'}
                     </ul>
 
                 </div>

@@ -8,6 +8,7 @@ import {Characters} from "./pages/Characters";
 import Locations from "./pages/Locations";
 import Episodes from "./pages/Episodes";
 import SimpleCharacter from "./pages/SimpleCharacter";
+import SimpleLocation from "./pages/SimpleLocation";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Route path="/characters/" component={Characters} />
         <Route path="/character/:id" component={SimpleCharacter} />
         <Route path="/locations/" component={Locations} />
-        <Route path="/location/:id" component={Locations} />
+        <Route path="/location/:id" component={SimpleLocation} />
         <Route path="/episodes" component={Episodes} />
         <Route path="/episode:id" component={Episodes} />
         <Route  component={NotFound} />

@@ -15,7 +15,7 @@ export default function CharacterItem(props) {
   <div className="card-content box">
   <div className="list-item--content card-size-char">
         <p className="title is-4 ">{name}</p>
-        <Link to={`/character/${id}`} className="button in-info">подробнее</Link>
+        <Link to={`/character/${id}`} className="button is-dark">подробнее</Link>
         
       </div>
       

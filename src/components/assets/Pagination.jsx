@@ -44,21 +44,26 @@ function Pagination({currentPage = Number, nextPage = Function.prototype, prevPa
   return (
     <div className="pagination">
       <button
-        className="button is-primary prev "
+        className="button is-dark prev "
         onClick={() => handlePrevPage()}
         disabled={disabledPrev}
       >
-        Предыдущая страница
+        назад
       </button>
 
-      <progress class="progress is-primary pgb" value={currentPage} max={maxPage} />
+
+      <div className='progress-container'>
+      <progress class="progress is-dark pgb" value={currentPage} max={maxPage} />
+      <span>{currentPage} / {maxPage}</span>
+      </div>
+      
 
       <button
-        className="button  is-primary next"
+        className="button  is-dark next"
         onClick={()=> handleNextPage() }
         disabled={disabledNext}
       >
-        Следующая страница
+        вперед
       </button>
     </div>
   );

@@ -42,12 +42,16 @@ const filterLocationByName = async (locationName) => {
     return await response.json();  
 }
 
+const filterLocationById = async (locationId) => {
+    const response = await fetch(`${API_URL}/location/${locationId}`);
+    return await response.json();  
+}
 
 
 // episodes data
 
-const getAllEpisodes = async (page) => {
-    const response = await fetch(`${API_URL}/episode/?page=${String(page)}`);
+const getAllEpisodes = async (episodeId) => {
+    const response = await fetch(`${API_URL}/episode/${String()}`);
     return await response.json();  
 }
 
@@ -72,6 +76,7 @@ export {
 
     getAllLocations,
     filterLocationByName,
+    filterLocationById,
 
     getAllEpisodes,
     filterEpisodesByEpisode,
