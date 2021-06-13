@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
     return (
             <nav class="navbar is-dark">
   <div class="navbar-brand">
-  <NavLink to='/' ><h1 className='is-size-1' style={{padding: '0.3rem', color: 'white', fontWeight: 'bold'}}>Rick and Morty</h1></NavLink>
+  <NavLink to='/' ><h1 className='is-size-1' style={{padding: '0.3rem', color: 'white', fontWeight: 'bold'}}>Rick and Morty base</h1></NavLink>
     <div class="navbar-burger" data-target="navbarExampleTransparentExample">
       <span></span>
       <span></span>

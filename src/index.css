@@ -124,3 +124,26 @@ justify-content: center;
   overflow-y: scroll;
   max-height: 80px;
 }
+
+.blog {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  grid-template-areas: "blog-content blog-notes" ;
+  gap: 0.2rem;
+}
+
+.blog-note {
+  margin-top: 1rem;
+}
+
+textarea {
+  padding: 0.4rem;
+  resize: none;
+  outline: none;
+}
+
+textarea :focus {
+  padding: 1rem;
+  resize: none;
+  outline: none;
+}
