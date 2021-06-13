@@ -9,6 +9,7 @@ import Locations from "./pages/Locations";
 import Episodes from "./pages/Episodes";
 import SimpleCharacter from "./pages/SimpleCharacter";
 import SimpleLocation from "./pages/SimpleLocation";
+import SimpleEpisode from './pages/SimpleEpisode';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         <Route path="/locations/" component={Locations} />
         <Route path="/location/:id" component={SimpleLocation} />
         <Route path="/episodes" component={Episodes} />
-        <Route path="/episode:id" component={Episodes} />
+        <Route path="/episode/:id" component={SimpleEpisode} />
         <Route  component={NotFound} />
 
 

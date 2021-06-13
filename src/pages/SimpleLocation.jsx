@@ -4,12 +4,13 @@ import { useParams } from "react-router-dom";
 import { filterLocationById } from "../api";
 import { Preloader } from "../components/assets/Preloader";
 import {Link} from 'react-router-dom'
+import {useHistory} from "react-router-dom";
 
 function SimpleLocation(props) {
   const { id } = useParams();
   const [location, setLocation] = useState([]);
 
-
+  const {goBack} = useHistory();
 
   useEffect(() => {
     filterLocationById(id).then((data) => setLocation(data));
@@ -27,11 +28,12 @@ function SimpleLocation(props) {
           <div className="card ">
             <div className="card-content box ">
 
-
+            <button className='button is-black ' onClick={goBack}> Назад</button>
                 <div className='char-wrapper'>
 
 
             <div className='char-content'>
+            
               <span className="title is-4 is-family-primary ">{location.name}</span>
               <ul>
                  {location.type ? <li>тип: {location.type}</li> : 'загружаю...'} 
@@ -47,7 +49,7 @@ function SimpleLocation(props) {
                     </ul>
 
                 </div>
-
+                <button className='button is-black' onClick={goBack}> Назад</button>
 
               </div>
 

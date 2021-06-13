@@ -2,15 +2,15 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { filterCharacterById } from "../api";
-import { getAllEpisodes } from "../api";
 import { Preloader } from "../components/assets/Preloader";
 import {Link} from 'react-router-dom'
+import {useHistory} from "react-router-dom";
 
 function SimpleCharacter(props) {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
 
-
+  const {goBack} = useHistory();
 
 
 
@@ -35,7 +35,7 @@ function SimpleCharacter(props) {
           <div className="card ">
             <div className="card-content box ">
 
-
+            
                 <div className='char-wrapper'>
 
                 <div className='char-img'>
@@ -53,11 +53,8 @@ function SimpleCharacter(props) {
                   { character.origin ? <li> место рождения: <Link to={character.origin.url.slice(31)} >{character.origin.name}</Link> </li> : <li> место рождения: неизвестно</li> }
                   { character.location ? <li> локация: <Link to={character.location.url.slice(31)} >{character.location.name}</Link> </li> : <li> поиск в базе...</li> }
                   
-                  
-                  <li></li>
-                  <li></li>
               </ul>
-
+              
                 <div className='char-episode-list' >
                 <p className='title is-5 is-bold' style={{margin: '1rem 0 0'}}>список эпизодов</p>
                     <ul>
@@ -66,7 +63,7 @@ function SimpleCharacter(props) {
 
                 </div>
 
-
+                <button className='button is-black' onClick={goBack}> Назад</button>
               </div>
 
               </div>

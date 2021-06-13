@@ -23,9 +23,10 @@ export default function Panel() {
 </span>
 </p>
 </div>
-<p className="panel-tabs">
+<p className="panel-tabs ">
 
 {/* <NavLink id='1' to='/'    >Блог</NavLink> */}
+
 <NavLink id='2' to='/characters' activeClassName={s.active} >  Персонажи</NavLink>
 <NavLink id='3' to='/locations'  activeClassName={s.active} >Локации</NavLink>
 <NavLink id='4' to='/episodes'  activeClassName={s.active} >Серии</NavLink>
