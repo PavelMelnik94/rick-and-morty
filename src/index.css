@@ -7,12 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+li {
+  list-style-type:none;
+  color: #181818;
+}
+
+li:hover {
+  font-weight: bold;
+}
 
 
-.general {
-  position: relative;
 
- 
+.nav-blog {
+    color: white;
+    display: inline-block;
+    margin: 29px;
+    font-size: 26px;
+    font-weight: 500;
 }
 
 .pagination {
@@ -147,3 +158,39 @@ textarea :focus {
   resize: none;
   outline: none;
 }
+
+.search-category {
+  margin: 0 0.5rem;
+  color: black;
+}
+
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #181818;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+/* radioButton */
+

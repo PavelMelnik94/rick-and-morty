@@ -1,19 +1,33 @@
-import React from "react";
-import Blog from "./Blog";
+import React, { useState } from "react";
+import Blog from "../components/blog/Blog";
+
+import  {Search}  from '../components/Search/Search'
 
 
-import Panel from "../components/Panel";
+
+export default function Home() {
 
 
 
-function Home() {
+  
+
   return (
     <>
-      <Panel />
+      <div className="blog">
+        <Blog 
+        />
 
-      <Blog />
+        <div id="blog-notes" className="  blog-notes">
+        
+          <div className="blog-note ">
+<Search />
+
+          </div>
+
+          
+          
+        </div>
+      </div>
     </>
   );
 }
-
-export { Home };

@@ -1,6 +1,5 @@
-import Header from "./components/Header";
-import { Footer } from "./components/Footer";
-import { Home } from "./pages/Home";
+import Header from "./components/assets/Header";
+import { Footer } from "./components/assets/Footer";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import NotFound from "./pages/NotFound";
@@ -10,6 +9,7 @@ import Episodes from "./pages/Episodes";
 import SimpleCharacter from "./pages/SimpleCharacter";
 import SimpleLocation from "./pages/SimpleLocation";
 import SimpleEpisode from './pages/SimpleEpisode';
+import Home from "./pages/Home";
 
 function App() {
   return (

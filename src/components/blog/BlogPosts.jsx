@@ -1,16 +1,16 @@
-import React, {useState} from 'react'
+import React from 'react'
 import BlogPost from './BlogPost'
 
 
 
-export default function BlogPosts({post}) {
+export default function BlogPosts({post }) {
 
     
 
     return (
         <div>
             
-        {post.map(posts => <BlogPost key={posts.id} {...posts}/>)  }
+        {post.map(posts => <BlogPost key={posts.id} {...posts} />)  }
 
         </div>
     )

@@ -17,10 +17,6 @@ function SimpleCharacter(props) {
   useEffect(() => {
     
     filterCharacterById(id).then((data) => setCharacter(data));
-    console.log(character);
-    // const currentId = character.episode.map(url => url.slice(40));
-    // getAllEpisodes(currentId).then((data) => setEpisodeName(data.name));
-
   }, [id, character.episode, character]);
 
  

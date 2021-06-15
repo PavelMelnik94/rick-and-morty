@@ -2,8 +2,8 @@ import React from 'react'
 import {useEffect, useState} from 'react';
 import { Pagination } from '../components/assets/Pagination.jsx'
 import {Preloader} from '../components/assets/Preloader';
-import {getAllLocations} from '../api';
-import Panel from '../components/Panel';
+import {getAllLocationByPage} from '../api';
+import Panel from '../components/Search/Panel/Panel';
 import {LocationList} from '../components/locations/LocationList'
 
 
@@ -15,7 +15,7 @@ export default function Locations() {
    
 
 useEffect(() => {
-    getAllLocations(currentPage)
+  getAllLocationByPage(currentPage)
     .then((data) => {
   setLocations(data.results)
   setMaxPage(data.info.pages)
@@ -39,7 +39,6 @@ const prevPage = () => {
     return (
         
             <>
-          <Panel />
 
           <Pagination 
           currentPage={currentPage}
