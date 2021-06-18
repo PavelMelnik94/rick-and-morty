@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 
 import { getAllCategory } from "../../api";
 
-
 import Panel from "./Panel/Panel";
 import ResultList from "./ResultList";
 
-function Search() {
+export default function Search() {
   const [searchingResult, setSearchingResult] = useState([]);
   const [category, setCategory] = useState("character");
   const [value, setValue] = useState("");
@@ -21,7 +20,6 @@ function Search() {
   useEffect(() => {
     getAllCategory(category).then((resp) => {
       setData(resp.results);
-      console.log("get запрос" + {category});
     });
   }, [category]);
 
@@ -45,5 +43,3 @@ function Search() {
     </>
   );
 }
-
-export { Search };

@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { useParams } from "react-router-dom";
-
-import { Preloader } from "../components/assets/Preloader";
-import { Pagination } from "../components/assets/Pagination.jsx";
+import Preloader from "../components/assets/Preloader";
+import Pagination from "../components/assets/Pagination.jsx";
 
 import CharacterList from "../components/characters/CharacterList";
 import { getAllCharactersByPage } from "../api";
 
-function Characters() {
-  const id = useParams();
-  console.log(id);
-  console.log(useParams);
-
+export default function Characters() {
   const [character, setCharacter] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -25,7 +19,7 @@ function Characters() {
         setMaxPage(data.info.pages);
       })
       .catch((error) => console.log("error: " + error));
-  }, [currentPage, maxPage]);
+  }, [currentPage]);
 
   const prevPage = () => {
     setCurrentPage(currentPage - 1);
@@ -55,5 +49,3 @@ function Characters() {
     </>
   );
 }
-
-export { Characters };

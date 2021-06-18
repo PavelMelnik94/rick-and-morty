@@ -1,31 +1,18 @@
-import React, { useState } from "react";
+import Search from "../components/Search/Search";
 import Blog from "../components/blog/Blog";
 
-import  {Search}  from '../components/Search/Search'
-
-
-
 export default function Home() {
-
-
-
-  
-
   return (
     <>
-      <div className="blog">
-        <Blog 
-        />
+      <div className="main-section-grid">
+      <div id="blog-content" className="blog-content box p-2 ">
+        <Blog />
+        </div>
 
-        <div id="blog-notes" className="  blog-notes">
-        
-          <div className="blog-note ">
-<Search />
-
+        <div id="main-section-search" className="main-section-search">
+          <div className="search-container">
+            <Search />
           </div>
-
-          
-          
         </div>
       </div>
     </>

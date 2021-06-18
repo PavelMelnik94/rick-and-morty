@@ -1,39 +1,41 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import SimpleCharacter from "./components/characters/SimpleCharacter";
+import SimpleLocation from "./components/locations/SimpleLocation";
+import SimpleEpisode from "./components/episodes/SimpleEpisode";
+
 import Header from "./components/assets/Header";
-import { Footer } from "./components/assets/Footer";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Route, Switch } from "react-router-dom";
-import NotFound from "./pages/NotFound";
-import {Characters} from "./pages/Characters";
+import Home from "./pages/Home";
+import Characters from "./pages/Characters";
 import Locations from "./pages/Locations";
 import Episodes from "./pages/Episodes";
-import SimpleCharacter from "./pages/SimpleCharacter";
-import SimpleLocation from "./pages/SimpleLocation";
-import SimpleEpisode from './pages/SimpleEpisode';
-import Home from "./pages/Home";
+import Footer from "./components/assets/Footer";
+import NotFound from "./pages/NotFound";
+
+import Modal from "./components/assets/ModalWindow/Modal";
+import ADSlider from "./components/assets/ADSlider";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Modal />
+      <Router basename='/rick-and-morty'>
         <Header />
+        
         <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-
-
-        <Route exact path="/">
-          <Home />
-        </Route>
-
-        <Route path="/characters/" component={Characters} />
-        <Route path="/character/:id" component={SimpleCharacter} />
-        <Route path="/locations/" component={Locations} />
-        <Route path="/location/:id" component={SimpleLocation} />
-        <Route path="/episodes" component={Episodes} />
-        <Route path="/episode/:id" component={SimpleEpisode} />
-        <Route  component={NotFound} />
-
-
+          <Route path="/characters/" component={Characters} />
+          <Route path="/character/:id" component={SimpleCharacter} />
+          <Route path="/locations/" component={Locations} />
+          <Route path="/location/:id" component={SimpleLocation} />
+          <Route path="/episodes" component={Episodes} />
+          <Route path="/episode/:id" component={SimpleEpisode} />
+          <Route component={NotFound} />
         </Switch>
+        <ADSlider />
         <Footer />
       </Router>
     </div>

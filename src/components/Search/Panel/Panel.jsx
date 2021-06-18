@@ -1,34 +1,24 @@
 import React, { useState, useEffect } from "react";
-import s from "./Panel.module.css";
 
-export default function Panel({cb = Function.prototype }) {
+export default function Panel({ cb = Function.prototype }) {
   const [searchValue, setSearchValue] = useState("");
   const [searchCategory, setSearchCategory] = useState("character");
 
   const handleKey = (e) => {
-    if (e.key === 'Enter') {
-        cb(searchValue, searchCategory);
+    if (e.key === "Enter") {
+      cb(searchValue, searchCategory);
     }
-    
-};
+  };
 
-const handleFilter = (e) => {
-  setSearchCategory(e.target.dataset.type);
-  
-  
-};
+  const handleFilter = (e) => {
+    setSearchCategory(e.target.dataset.type);
+  };
 
-useEffect(() => {
-  
-}, [searchValue, searchCategory])
+  useEffect(() => {}, [searchValue, searchCategory]);
 
   const handleSubmit = () => {
     cb(searchValue, searchCategory);
-};
-
-
-
-
+  };
 
   return (
     <div className="container-fluid general p-2">
@@ -36,8 +26,8 @@ useEffect(() => {
         <p className="panel-heading">Быстрый поиск</p>
         <div className="panel-block">
           <p className="control has-icons-left">
-            <input 
-            style={{maxWidth: '390px'}}
+            <input
+              style={{ maxWidth: "390px" }}
               className="input validate"
               placeholder='например, "Rick"'
               type="search"
@@ -50,13 +40,20 @@ useEffect(() => {
               <i className="fas fa-search" aria-hidden="true"></i>
             </span>
           </p>
-          <button className='button is-dark' style={{minWidth: '100px'}} onClick={handleSubmit}>найти</button>
+          <button
+            className="button is-dark"
+            style={{ minWidth: "100px" }}
+            onClick={handleSubmit}
+          >
+            найти
+          </button>
         </div>
         <p className="panel-tabs ">
           <div>
-            
             <p>
-            <span style={{marginRight: '1rem', fontSize: '16px'}}>категория поиска:</span>
+              <span style={{ marginRight: "1rem", fontSize: "16px" }}>
+                категория поиска:
+              </span>
               <label className="radio">
                 <input
                   className="with-gap search-category"
@@ -67,7 +64,7 @@ useEffect(() => {
                   onChange={handleFilter}
                   checked={searchCategory === "character"}
                 />
-                <span  activeClassName={s.active}>Персонажи</span>
+                <span>Персонажи</span>
               </label>
 
               <label className="radio">
@@ -80,7 +77,7 @@ useEffect(() => {
                   onChange={handleFilter}
                   checked={searchCategory === "location"}
                 />
-                <span activeClassName={s.active}>Локации</span>
+                <span>Локации</span>
               </label>
 
               <label className="radio">
@@ -93,14 +90,12 @@ useEffect(() => {
                   onChange={handleFilter}
                   checked={searchCategory === "episode"}
                 />
-                <span activeClassName={s.active}>Серии</span>
+                <span>Серии</span>
               </label>
             </p>
           </div>
-
         </p>
       </nav>
-
     </div>
   );
 }

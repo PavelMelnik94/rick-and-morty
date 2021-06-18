@@ -1,45 +1,38 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
-function Pagination({currentPage = Number, nextPage = Function.prototype, prevPage = Function.prototype, maxPage = Number}) {
-  
-  
-  
-
+export default function Pagination({
+  currentPage = Number,
+  nextPage = Function.prototype,
+  prevPage = Function.prototype,
+  maxPage = Number,
+}) {
   const [disabledPrev, setDisabledPrev] = useState(true);
   const [disabledNext, setDisabledNext] = useState(false);
 
-  
-
   useEffect(() => {
-
-
-    
     if (currentPage > 1) {
-      setDisabledPrev(false)
-  }
-  if (currentPage <= 1 ) {
-      setDisabledPrev(true)
-  } 
-  
-  if (currentPage >= maxPage) { 
-      setDisabledNext(true)
-  }
-  
-  if (currentPage < maxPage) {
-      setDisabledNext(false)
+      setDisabledPrev(false);
     }
-  }, [maxPage, currentPage])
+    if (currentPage <= 1) {
+      setDisabledPrev(true);
+    }
 
+    if (currentPage >= maxPage) {
+      setDisabledNext(true);
+    }
 
-
+    if (currentPage < maxPage) {
+      setDisabledNext(false);
+    }
+  }, [maxPage, currentPage]);
 
   const handlePrevPage = () => {
-    return prevPage()
- }
+    return prevPage();
+  };
 
- const handleNextPage = () => {
-    return nextPage()
- }
+  const handleNextPage = () => {
+    return nextPage();
+  };
 
   return (
     <div className="pagination">
@@ -51,16 +44,20 @@ function Pagination({currentPage = Number, nextPage = Function.prototype, prevPa
         назад
       </button>
 
-
-      <div className='progress-container'>
-      <progress class="progress is-dark pgb" value={currentPage} max={maxPage} />
-      <span>{currentPage} / {maxPage}</span>
+      <div className="progress-container">
+        <progress
+          class="progress is-dark pgb"
+          value={currentPage}
+          max={maxPage}
+        />
+        <span>
+          {currentPage} / {maxPage}
+        </span>
       </div>
-      
 
       <button
         className="button  is-dark next"
-        onClick={()=> handleNextPage() }
+        onClick={() => handleNextPage()}
         disabled={disabledNext}
       >
         вперед
@@ -68,6 +65,3 @@ function Pagination({currentPage = Number, nextPage = Function.prototype, prevPa
     </div>
   );
 }
-
-
-export { Pagination };

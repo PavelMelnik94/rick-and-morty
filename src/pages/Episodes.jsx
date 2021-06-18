@@ -1,11 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-import { Pagination } from "../components/assets/Pagination.jsx";
-import { Preloader } from "../components/assets/Preloader";
+import EpisodesList from "../components/episodes/EpisodesList";
+import Pagination from "../components/assets/Pagination.jsx";
+import Preloader from "../components/assets/Preloader";
 
 import { getAllEpisodesByPage } from "../api";
-import { EpisodesList } from "../components/episodes/EpisodesList";
 
 export default function Episodes() {
   const [episodes, setEpisodes] = useState([]);
@@ -19,8 +19,7 @@ export default function Episodes() {
         setMaxPage(data.info.pages);
       })
       .catch((error) => console.log("error: " + error));
-  }, [currentPage, episodes, maxPage]);
-  console.log(episodes);
+  }, [currentPage, episodes]);
 
   const prevPage = () => {
     setCurrentPage(currentPage - 1);
